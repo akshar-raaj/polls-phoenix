@@ -24,6 +24,20 @@ Start the server
 
     $ mix phx.server
 
+Start an interactive shell
+
+    $ iex -S mix phx.server
+
+Attempt invoking the following commands:
+
+    iex> Polls.about()
+
+    iex> PollsWeb.router()
+
+    iex> PollsWeb.controller()
+
+    iex> PollsWeb.html()
+
 # Polls
 
 To start your Phoenix server:
