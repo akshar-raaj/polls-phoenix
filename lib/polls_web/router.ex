@@ -18,6 +18,7 @@ defmodule PollsWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/polls", PollsController, :list
   end
 
   # Other scopes may use custom stacks.
