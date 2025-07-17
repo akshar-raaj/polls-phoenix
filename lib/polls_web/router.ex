@@ -20,6 +20,8 @@ defmodule PollsWeb.Router do
     get "/", PageController, :home
     get "/polls", PollsController, :list
     get "/polls/:poll_id", PollsController, :detail
+
+    get "/books", BookController, :list
   end
 
   # Other scopes may use custom stacks.
