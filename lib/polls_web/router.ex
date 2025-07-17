@@ -23,7 +23,9 @@ defmodule PollsWeb.Router do
 
     get "/books", BookController, :list
 
-    resources "/users", UserController, only: [:index, :show]
+    resources "/users", UserController, only: [:index, :show] do
+      resources "/posts", PostController, only: [:index]
+    end
   end
 
   # Other scopes may use custom stacks.
