@@ -8,3 +8,13 @@ defmodule PollsWeb.PageHTML do
 
   embed_templates "page_html/*"
 end
+
+
+defmodule PollsWeb.Admin.HomeHTML do
+  use PollsWeb, :html
+  def home(assigns) do
+    ~H"""
+      Only admin can reach here!
+    """
+  end
+end
