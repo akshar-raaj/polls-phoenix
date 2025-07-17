@@ -1,9 +1,5 @@
 defmodule PollsWeb.PollsHTML do
   use PollsWeb, :html
 
-  def list(assigns) do
-    ~H"""
-      Polls list page!
-    """
-  end
+  embed_templates "polls_html/*"
 end
