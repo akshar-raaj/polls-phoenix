@@ -33,6 +33,11 @@ defmodule PollsWeb.Endpoint do
     plug Phoenix.CodeReloader
   end
 
+  def log_details(conn, _opts) do
+    IO.puts "Method: #{conn.method}"
+    conn
+  end
+
   plug Phoenix.LiveDashboard.RequestLogger,
     param_key: "request_logger",
     cookie_key: "request_logger"
@@ -48,5 +53,6 @@ defmodule PollsWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug :log_details
   plug PollsWeb.Router
 end
