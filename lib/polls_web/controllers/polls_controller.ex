@@ -4,4 +4,8 @@ defmodule PollsWeb.PollsController do
   def list(conn, _params) do
     render(conn, :list)
   end
+
+  def detail(conn, _params) do
+    render(conn, :detail)
+  end
 end
