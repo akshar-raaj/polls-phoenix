@@ -22,6 +22,8 @@ defmodule PollsWeb.Router do
     get "/polls/:poll_id", PollsController, :detail
 
     get "/books", BookController, :list
+
+    resources "/users", UserController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.
