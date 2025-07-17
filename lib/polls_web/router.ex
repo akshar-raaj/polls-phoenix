@@ -33,6 +33,10 @@ defmodule PollsWeb.Router do
     get "/", HomeController, :home
   end
 
+  scope "/api", PollsWeb.API do
+    get "/", HomeController, :home
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", PollsWeb do
   #   pipe_through :api
