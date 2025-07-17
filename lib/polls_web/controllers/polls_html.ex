@@ -3,7 +3,7 @@ defmodule PollsWeb.PollsHTML do
 
   def detail(assigns) do
     ~H"""
-      Polls Detail!
+      Polls Detail for {assigns.poll_id}!
     """
   end
 

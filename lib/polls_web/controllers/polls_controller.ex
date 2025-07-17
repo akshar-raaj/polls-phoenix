@@ -5,7 +5,9 @@ defmodule PollsWeb.PollsController do
     render(conn, :list)
   end
 
-  def detail(conn, _params) do
-    render(conn, :detail)
+  def detail(conn, params) do
+    poll_id = params["poll_id"]
+    IO.puts "Request for #{poll_id}"
+    render(conn, :detail, poll_id: poll_id)
   end
 end
