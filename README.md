@@ -54,6 +54,15 @@ The request reaches the `Route`. `Route` routes it to a `controller`. Controller
 
     Route -> Controller -> View -> Template
 
+# Learnings
+
+- Route > Controller > View > Template
+- View: Function Component and Template File
+- Controllers are modules, Actions are function
+- Controller Functions take two arguments: connection and parameters
+- Views take a single argument: assigns
+- Pipelines allow a set of Plugs to be applied to differet sets of routes
+
 # Polls
 
 To start your Phoenix server:
