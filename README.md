@@ -38,6 +38,22 @@ Attempt invoking the following commands:
 
     iex> PollsWeb.html()
 
+If it works, you are all set!
+
+# Overview
+
+This repository captures my Phoenix Learning Journey!
+
+Django provides a wonderful `polls` tutorial for people starting with Django. We are building the same `polls` application using Phoenix.
+
+Phoenix follows a MVC framework.
+
+## Request-Response cycle
+
+The request reaches the `Route`. `Route` routes it to a `controller`. Controller invokes a `View`. View uses a `Function component` or a `Template File` to generate the HTML.
+
+    Route -> Controller -> View -> Template
+
 # Polls
 
 To start your Phoenix server:
