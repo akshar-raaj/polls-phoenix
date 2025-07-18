@@ -69,6 +69,15 @@ In case `json()` is used in the controller action, the response `Content-Type` i
     curl -v http://localhost:4000/api/
     curl -v -I http://localhost:4000/books/
 
+## Parsing behaviour
+
+Phoenix seamlessly deals with POST requests in a lot of cases. It reads the `Content-Type` header and performs appropriate parsing.
+It can seamlessly deal with `application/x-www-form-urlencoded` and `application/json` POST request.
+
+We have a route and controller action to demonstrate it. See PollsWeb.API.HomeController.create_poll.
+
+    curl -v -d '{"company": "Ascend", "category": "org"}' -H "Content-Type: application/json" http://localhost:4000/api/polls/
+
 # Learnings
 
 - Route > Controller > View > Template

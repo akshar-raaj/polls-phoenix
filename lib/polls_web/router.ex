@@ -41,6 +41,7 @@ defmodule PollsWeb.Router do
     # TODO: How does adding pipe_through :api help
     # TODO: Add APIs for Polls and Books
     get "/", HomeController, :home
+    post "/polls", HomeController, :create_poll
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
