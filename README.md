@@ -54,6 +54,16 @@ The request reaches the `Route`. `Route` routes it to a `controller`. Controller
 
     Route -> Controller -> View -> Template
 
+The `Controller` can choose to use `text` or `json` from the controller action, instead of delegating to a view using `render`. See PollsWeb.PageController.home().
+
+In case `text()` is used in the controller action, the response `Content-Type` is `text/plain`.
+
+    curl -v http://localhost:4000/
+
+In case `json()` is used in the controller action, the response `Content-Type` is `application/json`.
+
+    curl -v http://localhost:4000/api/
+
 # Learnings
 
 - Route > Controller > View > Template
@@ -62,6 +72,8 @@ The request reaches the `Route`. `Route` routes it to a `controller`. Controller
 - Controller Functions take two arguments: connection and parameters
 - Views take a single argument: assigns
 - Pipelines allow a set of Plugs to be applied to differet sets of routes
+- Scopes enable us to segregate the routes
+- Once a route matches, Phoenix applies all the plugs defined in all the piplines associated with the scope
 
 # Polls
 
