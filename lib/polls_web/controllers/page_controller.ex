@@ -7,12 +7,3 @@ defmodule PollsWeb.PageController do
     render(conn, :home, layout: false)
   end
 end
-
-
-defmodule PollsWeb.Admin.HomeController do
-  use PollsWeb, :controller
-
-  def home(conn, _params) do
-    render(conn, :home)
-  end
-end
