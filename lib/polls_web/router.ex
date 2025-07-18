@@ -19,8 +19,6 @@ defmodule PollsWeb.Router do
 
     get "/", PageController, :home
 
-    get "/books", BookController, :list
-
     resources "/users", UserController, only: [:index, :show] do
       resources "/posts", PostController, only: [:index]
     end
@@ -33,12 +31,17 @@ defmodule PollsWeb.Router do
     get "/:poll_id", PollsController, :detail
   end
 
+  scope "/books", PollsWeb.Books do
+    get "/", BookController, :list
+  end
+
   scope "/admin", PollsWeb.Admin do
     pipe_through :browser
     get "/", HomeController, :home
   end
 
   scope "/api", PollsWeb.API do
+    # TODO: Add APIs for Polls and Books
     get "/", HomeController, :home
   end
 

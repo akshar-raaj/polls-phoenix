@@ -1,4 +1,4 @@
-defmodule PollsWeb.BookController do
+defmodule PollsWeb.Books.BookController do
   use PollsWeb, :controller
 
   def list(conn, _params) do
