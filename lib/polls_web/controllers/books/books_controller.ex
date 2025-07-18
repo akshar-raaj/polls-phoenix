@@ -2,6 +2,17 @@ defmodule PollsWeb.Books.BookController do
   use PollsWeb, :controller
 
   def list(conn, _params) do
-    text(conn, "Books are the best buy!")
+    books = %{
+      "premchand": [
+        "Mansarovar",
+        "Godan",
+        "Gaban"
+      ],
+      "rowling": [
+        "philosopher's stone",
+        "deathly hallows"
+      ]
+    }
+    json(conn, books)
   end
 end
