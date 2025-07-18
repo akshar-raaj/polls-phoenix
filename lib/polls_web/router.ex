@@ -18,14 +18,19 @@ defmodule PollsWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/polls", PollsController, :list
-    get "/polls/:poll_id", PollsController, :detail
 
     get "/books", BookController, :list
 
     resources "/users", UserController, only: [:index, :show] do
       resources "/posts", PostController, only: [:index]
     end
+  end
+
+  scope "/polls", PollsWeb do
+    pipe_through :browser
+
+    get "/", PollsController, :list
+    get "/polls/:poll_id", PollsController, :detail
   end
 
   scope "/admin", PollsWeb.Admin do
