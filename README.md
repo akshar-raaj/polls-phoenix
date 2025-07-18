@@ -76,7 +76,13 @@ It can seamlessly deal with `application/x-www-form-urlencoded` and `application
 
 We have a route and controller action to demonstrate it. See PollsWeb.API.HomeController.create_poll.
 
+An `application/json` POST request works.
+
     curl -v -d '{"company": "Ascend", "category": "org"}' -H "Content-Type: application/json" http://localhost:4000/api/polls/
+
+A `application/x-www-form-urlencoded` request works as well.
+
+    curl -v -d 'company=Ascend' -d 'category=org' http://localhost:4000/api/polls/
 
 # Learnings
 
