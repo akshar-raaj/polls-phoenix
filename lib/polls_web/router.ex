@@ -19,9 +19,6 @@ defmodule PollsWeb.Router do
 
     get "/", PageController, :home
 
-    resources "/users", UserController, only: [:index, :show] do
-      resources "/posts", PostController, only: [:index]
-    end
   end
 
   scope "/polls", PollsWeb.Polls do
@@ -41,14 +38,10 @@ defmodule PollsWeb.Router do
   end
 
   scope "/api", PollsWeb.API do
+    # TODO: How does adding pipe_through :api help
     # TODO: Add APIs for Polls and Books
     get "/", HomeController, :home
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PollsWeb do
-  #   pipe_through :api
-  # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:polls, :dev_routes) do
