@@ -1,4 +1,4 @@
-defmodule PollsWeb.PollsController do
+defmodule PollsWeb.Polls.PollsController do
   use PollsWeb, :controller
 
   def list(conn, _params) do

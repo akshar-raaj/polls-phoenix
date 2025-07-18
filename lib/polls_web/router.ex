@@ -26,11 +26,11 @@ defmodule PollsWeb.Router do
     end
   end
 
-  scope "/polls", PollsWeb do
+  scope "/polls", PollsWeb.Polls do
     pipe_through :browser
 
     get "/", PollsController, :list
-    get "/polls/:poll_id", PollsController, :detail
+    get "/:poll_id", PollsController, :detail
   end
 
   scope "/admin", PollsWeb.Admin do

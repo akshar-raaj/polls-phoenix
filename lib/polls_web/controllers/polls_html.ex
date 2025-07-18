@@ -1,4 +1,4 @@
-defmodule PollsWeb.PollsHTML do
+defmodule PollsWeb.Polls.PollsHTML do
   use PollsWeb, :html
 
   def detail(assigns) do
