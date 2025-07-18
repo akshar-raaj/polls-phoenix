@@ -56,6 +56,10 @@ The request reaches the `Route`. `Route` routes it to a `controller`. Controller
 
 The `Controller` can choose to use `text` or `json` from the controller action, instead of delegating to a view using `render`. See PollsWeb.PageController.home().
 
+In case plain render(), ~H combination or embed_templates is used, the response `Content-Type` is `text/html`.
+
+    curl -v http://localhost:4000/polls/
+
 In case `text()` is used in the controller action, the response `Content-Type` is `text/plain`.
 
     curl -v http://localhost:4000/
@@ -63,6 +67,7 @@ In case `text()` is used in the controller action, the response `Content-Type` i
 In case `json()` is used in the controller action, the response `Content-Type` is `application/json`.
 
     curl -v http://localhost:4000/api/
+    curl -v -I http://localhost:4000/books/
 
 # Learnings
 
