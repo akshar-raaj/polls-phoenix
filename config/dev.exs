@@ -53,6 +53,15 @@ config :polls, PollsWeb.Endpoint,
     ]
   ]
 
+config :polls, Polls.Repo,
+  username: "postgres",
+  password: "postgres",
+  hostname: "postgres",
+  database: "postgres",
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
 # Enable dev routes for dashboard and mailbox
 config :polls, dev_routes: true
 

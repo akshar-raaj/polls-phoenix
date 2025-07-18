@@ -29,6 +29,7 @@ config :polls, PollsWeb.Endpoint,
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
 config :polls, Polls.Mailer, adapter: Swoosh.Adapters.Local
+config :polls, ecto_repos: [Polls.Repo]
 
 # Configure esbuild (the version is required)
 config :esbuild,
