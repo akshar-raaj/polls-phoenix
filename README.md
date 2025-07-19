@@ -95,6 +95,7 @@ The following command creates the database.
 The following command creates a schema
 
     mix phx.gen.schema User users name:string email:string
+    mix phx.gen.schema Poll polls questiontring
 
 Once the schema is created, it needs to be appliced in the database.
 
