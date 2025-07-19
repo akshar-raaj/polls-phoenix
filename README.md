@@ -84,6 +84,22 @@ A `application/x-www-form-urlencoded` request works as well.
 
     curl -v -d 'company=Ascend' -d 'category=org' http://localhost:4000/api/polls/
 
+## Database interaction
+
+Phoenix uses `Ecto` to interact with the database.
+
+The following command creates the database.
+
+    mix ecto.create
+
+The following command creates a schema
+
+    mix phx.gen.schema User users name:string email:string
+
+Once the schema is created, it needs to be appliced in the database.
+
+    mix ecto.migrate
+
 # Learnings
 
 - Route > Controller > View > Template
@@ -94,6 +110,7 @@ A `application/x-www-form-urlencoded` request works as well.
 - Pipelines allow a set of Plugs to be applied to differet sets of routes
 - Scopes enable us to segregate the routes
 - Once a route matches, Phoenix applies all the plugs defined in all the piplines associated with the scope
+- Ecto repositories are interface into the storage system
 
 # Polls
 
