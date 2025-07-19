@@ -101,6 +101,14 @@ Once the schema is created, it needs to be appliced in the database.
 
     mix ecto.migrate
 
+Once the database is created, you can execute the following commands. You need to start an interactive shell using `iex -S mix`.
+
+Insert a poll
+
+    alias Polls.Poll
+    alias Polls.Repo
+    Repo.insert(%Poll{question: "What is your name?"})
+
 # Learnings
 
 - Route > Controller > View > Template
