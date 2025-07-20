@@ -109,6 +109,18 @@ Insert a poll
     alias Polls.Repo
     Repo.insert(%Poll{question: "What is your name?"})
 
+## Mix
+
+Mix discovers the modules to make available using `elixirc_paths`.
+
+Try `iex -S mix` and the following commands.
+
+    Polls.MixProject.project()[:elixirc_paths]
+
+We have added `script` directory to elixirc_paths(), hence file `person.ex` is discoverable now.
+
+    Person.greet("bob")
+
 # Learnings
 
 - Route > Controller > View > Template
