@@ -9,18 +9,10 @@ defmodule Polls.Application do
   def start(_type, _args) do
     children = [
       Polls.Repo,
-      {DNSCluster, query: Application.get_env(:polls, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Polls.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: Polls.Finch},
-      # Start a worker by calling: Polls.Worker.start_link(arg)
-      # {Polls.Worker, arg},
-      # Start to serve requests, typically the last entry
       PollsWeb.Endpoint
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Polls.Supervisor]
     Supervisor.start_link(children, opts)
   end

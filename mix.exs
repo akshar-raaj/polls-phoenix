@@ -47,8 +47,7 @@ defmodule Polls.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:swoosh, "~> 1.5"},
-      {:finch, "~> 0.13"},
+
 
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
