@@ -9,7 +9,6 @@ defmodule Polls.Application do
   def start(_type, _args) do
     children = [
       Polls.Repo,
-      PollsWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:polls, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Polls.PubSub},
       # Start the Finch HTTP client for sending emails
