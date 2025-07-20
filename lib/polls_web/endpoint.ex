@@ -39,6 +39,11 @@ defmodule PollsWeb.Endpoint do
     conn
   end
 
+  def log_path(conn, _opts) do
+    Logger.info("Request Path: #{conn.request_path}")
+    conn
+  end
+
   plug Phoenix.LiveDashboard.RequestLogger,
     param_key: "request_logger",
     cookie_key: "request_logger"
@@ -54,5 +59,6 @@ defmodule PollsWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug :log_details
+  plug :log_path
   plug PollsWeb.Router
 end
