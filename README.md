@@ -109,7 +109,13 @@ Insert a poll
     alias Polls.Repo
     Repo.insert(%Poll{question: "What is your name?"})
 
-## Mix
+## Project Navigation
+
+### Mix
+
+Mix is Elixir's build tool. A good place to start navigating a Mix application is `mix.exs`.
+
+It tells about the application name, main application module, dependencies, Elixir version and much more.
 
 Mix discovers the modules to make available using `elixirc_paths`.
 
@@ -120,6 +126,18 @@ Try `iex -S mix` and the following commands.
 We have added `script` directory to elixirc_paths(), hence file `person.ex` is discoverable now.
 
     Person.greet("bob")
+
+Check the application name:
+
+    Polls.MixProject.project()[:app]
+
+The Mix project has `use Mix.Project` as the first line. `use` is a macro. Having this line forces us to implement the needed callbacks `project` and `application` inside `Polls.MixProject`.
+
+### OTP Application
+
+The next logical step after `mix.exs` is the main application module. The main application module is `Polls.Application` defined in `lib/polls/application.ex`.
+
+The main application module is a OTP application. It must have `use Application` as the first statement.
 
 # Learnings
 
