@@ -1,5 +1,6 @@
 defmodule PollsWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :polls
+  require Logger
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -34,7 +35,7 @@ defmodule PollsWeb.Endpoint do
   end
 
   def log_details(conn, _opts) do
-    IO.puts "Method: #{conn.method}"
+    Logger.info("Method Name: #{conn.method}")
     conn
   end
 
