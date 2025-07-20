@@ -131,13 +131,20 @@ Check the application name:
 
     Polls.MixProject.project()[:app]
 
-The Mix project has `use Mix.Project` as the first line. `use` is a macro. Having this line forces us to implement the needed callbacks `project` and `application` inside `Polls.MixProject`.
+The Mix project has `use Mix.Project` as the first line. `use` is a macro that inject behaviour into the module that uses it. Having this line forces us to implement the needed **callbacks** `project` and `application` inside `Polls.MixProject`.
 
 ### OTP Application
 
 The next logical step after `mix.exs` is the main application module. The main application module is `Polls.Application` defined in `lib/polls/application.ex`.
 
 The main application module is a OTP application. It must have `use Application` as the first statement.
+
+### Supervisor
+
+A `children` needs to be passed to `Supervisor.start_link`. `children` is a list of dependencies to start before starting the actual application.
+The entries of `children` can either by a module or a tuple. The entry could be `Polls.Repo` or it could be `{Phoenix.PubSub, name: Polls.PubSub}`.
+
+Ultimately, Supervisor needs to call `start_link` on every child. If we specify a tuple, then the second entry of the tuple is used as an argument to start_link, i.e `Phoenix.PubSub.start_link(name: Polls.PubSub)`.
 
 # Learnings
 
