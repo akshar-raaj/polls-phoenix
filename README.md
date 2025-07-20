@@ -146,6 +146,15 @@ The entries of `children` can either by a module or a tuple. The entry could be 
 
 Ultimately, Supervisor needs to call `start_link` on every child. If we specify a tuple, then the second entry of the tuple is used as an argument to start_link, i.e `Phoenix.PubSub.start_link(name: Polls.PubSub)`.
 
+### Endpoint
+
+`Polls.Application.start` has `PollsWeb.Endpoint` as one of its child.
+
+`Endpoint` must `use` a `Phoenix.Endpoint`. `Phoenix.Endpoint` doesn't define any behaviour that needs to be implemented by `Endpoint`. No specific callbacks to be implemented.
+Just configure the plugs!
+
+`Endpoint` has several plugs. Plugs are essentially middlewares that run on every request.
+
 # Learnings
 
 - Route > Controller > View > Template
